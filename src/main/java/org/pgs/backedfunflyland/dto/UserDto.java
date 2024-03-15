@@ -1,30 +1,26 @@
 package org.pgs.backedfunflyland.dto;
 
-import java.util.Date;
-
-public class CashierDto {
+public class UserDto {
     private Long id;
     private String username;
     private String password;
+    private double salary;
     private String email;
     private String mobileNumber;
-    private double salary;
-    private Date joiningDate;
+    private String role;
 
-    // Constructors
-    public CashierDto() {}
+    public UserDto() {}
 
-    public CashierDto(Long id, String username, String password, String email, String mobileNumber, double salary, Date joiningDate) {
+    public UserDto(Long id, String username, String password, double salary, String email, String mobileNumber, String role) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.salary = salary;
         this.email = email;
         this.mobileNumber = mobileNumber;
-        this.salary = salary;
-        this.joiningDate = joiningDate;
+        this.role = role;
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -49,6 +45,14 @@ public class CashierDto {
         this.password = password;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -65,19 +69,11 @@ public class CashierDto {
         this.mobileNumber = mobileNumber;
     }
 
-    public double getSalary() {
-        return salary;
+    public String getRole() {
+        return role;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public Date getJoiningDate() {
-        return joiningDate;
-    }
-
-    public void setJoiningDate(Date joiningDate) {
-        this.joiningDate = joiningDate;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

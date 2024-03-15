@@ -4,33 +4,32 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
-import org.pgs.backedfunflyland.dto.CashierDto;
-import org.pgs.backedfunflyland.model.CashierModel;
+import org.pgs.backedfunflyland.dto.UserDto;
+import org.pgs.backedfunflyland.model.UserModel;
+
 @Mapper
-public interface CashierMapper {
-    CashierMapper INSTANCE = Mappers.getMapper(CashierMapper.class);
+public interface UserMapper {
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "username", target = "username"),
             @Mapping(source = "password", target = "password"),
-            // Add mappings for additional fields
             @Mapping(source = "salary", target = "salary"),
             @Mapping(source = "email", target = "email"),
             @Mapping(source = "mobileNumber", target = "mobileNumber"),
-            @Mapping(source = "joiningDate", target = "joiningDate")
+            @Mapping(source = "role", target = "role")
     })
-    CashierDto cashierToCashierDto(CashierModel cashierModel);
+    UserDto userToUserDto(UserModel userModel);
 
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "username", target = "username"),
             @Mapping(source = "password", target = "password"),
-            // Add mappings for additional fields
             @Mapping(source = "salary", target = "salary"),
             @Mapping(source = "email", target = "email"),
             @Mapping(source = "mobileNumber", target = "mobileNumber"),
-            @Mapping(source = "joiningDate", target = "joiningDate")
+            @Mapping(source = "role", target = "role")
     })
-    CashierModel cashierDtoToCashier(CashierDto cashierDto);
+    UserModel userDtoToUser(UserDto userDto);
 }
